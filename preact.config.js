@@ -26,17 +26,30 @@ export default {
             }
         });
 
-        if(!env.production){
-
-            config.devServer.proxy = {
-                '/api/food': {
-                    target: 'localhost:8080/api/food',
-                    bypass: (request,response) => {
-                        response.json(food)
-                    }
-                }
-            }
+        if (
+            process.env.NODE_ENV === "production" &&
+            process.env.MIRAGE_ENABLED !== "true"
+        ) {
+        config.module
+            .rule("exclude-mirage")
+            .test(/node_modules\/miragejs\//)
+            .use("null-loader")
+            .loader("null-loader")
         }
+
+        // if(!env.production){
+
+        //     // config.devServer.proxy = {
+        //     //     '/api/food': {
+        //     //         bypass: function(req, res, proxyOptions) {
+        //     //             if (req.headers.accept.indexOf('html') !== -1) {
+        //     //               console.log('Skipping proxy for browser request.');
+        //     //               return '/index.html';
+        //     //             }
+        //     //           }
+        //     //     }
+        //     // }
+        // }
 
         return config;
     }
