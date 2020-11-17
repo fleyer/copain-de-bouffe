@@ -4,7 +4,8 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "preact build",
+    "build:prod": "export ENVIRONMENT=production && preact build",
+    "build:staging": "export ENVIRONMENT=staging && preact build",
     "serve": "sirv build --port 8080 --cors --single",
     "dev": "preact watch",
     "lint": "eslint src",
@@ -30,6 +31,7 @@
     "miragejs": "^0.1.41"
   },
   "dependencies": {
+    "dotenv-webpack": "^5.1.0",
     "null-loader": "^4.0.1",
     "preact": "^10.3.2",
     "preact-render-to-string": "^5.1.4",

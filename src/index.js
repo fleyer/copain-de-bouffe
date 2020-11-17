@@ -2,7 +2,7 @@ import './style';
 import App from './components/app';
 import {makeServer} from "./server"
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.MIRAGE_ENABLED) {
     makeServer()
 }
 
