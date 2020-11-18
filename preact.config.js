@@ -32,6 +32,7 @@ export default {
         //load env variables 
         config.plugins.push(new Dotenv({
             path: `.env.${process.env.ENVIRONMENT}`,
+            systemvars: true,
             defaults: '.env'
         }))
 
