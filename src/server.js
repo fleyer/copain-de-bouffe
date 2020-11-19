@@ -20,6 +20,17 @@ const makeServer = ()=>{
             }
         ]
     })
+
+    server.get("/api/biscuits", {
+        "data": [
+            {
+                "name": "cookie",
+                "imageLink": "assets/images/food/cookie.jpg",
+                "link": "/biscuits/cookie",
+                "description": "Cookie, biscuit sec aux pépites de chocolat."
+            }
+        ]
+    })
 }
 
 export {

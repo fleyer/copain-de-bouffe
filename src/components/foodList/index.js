@@ -4,7 +4,6 @@ import style from './style.css';
 
 const List = (props) => (
     <div class={style.foodList}>
-        <p class="text-xl">Partager vos repas</p>
         <ul class={style.list}>
             {getList(props.elems)}
         </ul>
