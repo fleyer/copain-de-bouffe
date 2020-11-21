@@ -28,3 +28,11 @@ html, body {
 .content {
 	@apply w-3/5
 }
+
+.title {
+	@apply text-5xl
+}
+
+.subtitle {
+	@apply text-3xl
+}

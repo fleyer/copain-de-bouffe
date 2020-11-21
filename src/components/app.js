@@ -8,6 +8,7 @@ import Home from '../routes/home';
 import Profile from '../routes/profile';
 import Food from '../routes/food'
 import Biscuits from '../routes/biscuits'
+import Biscuit from '../routes/biscuit'
 
 const App = () => (
 	<div id="app">
@@ -16,7 +17,7 @@ const App = () => (
 			<Home path="/" />
 			<Food path="/food/:item" />
 			<Biscuits path="/biscuits" />
-			{/* <Biscuits path="/biscuits/:item" /> */}
+			<Biscuit path="/biscuits/:item" />
 			<Profile path="/profile/" user="me" />
 			<Profile path="/profile/:user" />
 		</Router>

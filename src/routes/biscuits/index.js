@@ -3,12 +3,12 @@ import FoodList from '../../components/foodList'
 import { useState,useEffect } from 'preact/hooks'
 import style from './style.css'
 
-const Biscuit = ()=>{
+const Biscuits = ()=>{
 
     const [biscuits,setBiscuits] = useState()
 
 	useEffect(()=>{
-		fetch('api/biscuits',{method: 'GET',headers:{accept: 'application/json'}})
+		fetch('api/v1/biscuits',{method: 'GET',headers:{accept: 'application/json'}})
 		.then(response=>response.json())
 		.then(json=>{setBiscuits(json.data)})
 	},[])
@@ -18,4 +18,4 @@ const Biscuit = ()=>{
     </div>)
 }
 
-export default Biscuit
+export default Biscuits

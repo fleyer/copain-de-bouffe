@@ -8,7 +8,7 @@ const Home = () => {
 	const [elems,setElems] = useState()
 
 	useEffect(()=>{
-		fetch('api/food',{method: 'GET',headers:{accept: 'application/json'}})
+		fetch('api/v1/food',{method: 'GET',headers:{accept: 'application/json'}})
 		.then(response=>response.json())
 		.then(json=>{setElems(json.data)})
 	},[])
