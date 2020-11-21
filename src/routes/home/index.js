@@ -14,8 +14,10 @@ const Home = () => {
 	},[])
 
 	return (
-		<div class={style.home}>
-			<FoodList elems={elems}></FoodList>
+		<div class={`${style.home} flex flex-col w-full my-12 items-center`}>
+			<h1 class="text-5xl mb-12 font-bold">Bienvenu !</h1>
+			<h1 class="text-3xl border-b-2 mb-12">As-tu faim ?</h1>
+			<FoodList class="content" elems={elems}></FoodList>
 		</div>
 	)
 }

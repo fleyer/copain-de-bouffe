@@ -3,7 +3,7 @@ import { Link } from 'preact-router/match';
 import style from './style.css';
 
 const List = (props) => (
-    <div class={style.foodList}>
+    <div class={props.class}>
         <ul class={style.list}>
             {getList(props.elems)}
         </ul>

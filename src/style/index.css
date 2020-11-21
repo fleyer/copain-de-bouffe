@@ -24,3 +24,7 @@ html, body {
 #app {
 	height: 100%;
 }
+
+.content {
+	@apply w-3/5
+}
