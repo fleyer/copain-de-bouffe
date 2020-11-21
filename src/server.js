@@ -1,10 +1,18 @@
 import { createServer } from "miragejs"
 
+let server
 
 const makeServer = ()=>{
 
-    let server = createServer()
-    server.get("/api/food", {
+    if(server){
+        server.shutDown()
+    }
+
+    server = createServer()
+
+    server.namespace = '/api/v1'
+
+    server.get("/food", {
         "data": [
             {
                 "name": "ramen",
@@ -21,7 +29,7 @@ const makeServer = ()=>{
         ]
     })
 
-    server.get("/api/biscuits", {
+    server.get("/biscuits", {
         "data": [
             {
                 "name": "cookie",
@@ -29,6 +37,17 @@ const makeServer = ()=>{
                 "link": "/biscuits/cookie",
                 "description": "Cookie, biscuit sec aux pépites de chocolat."
             }
+        ]
+    })
+
+    server.get("/biscuits/cookie", {
+        "name": "cookie",
+        "imageLink": "/assets/images/food/cookie.jpg",
+        "link": "/biscuits/cookie",
+        "description": "Cookie, biscuit sec aux pépites de chocolat.",
+        "ingredients":[
+            {"name":"sugar"},
+            {"name":"chocolat"},
         ]
     })
 }
